@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.sun{
+    margin:auto;
+    margin-top:30px;
+    width: 200px;
+    height:200px;
+    background-color: #FFde00;
+    border-radius: 50%;
+    z-index:990;
+    box-shadow: 0 0 0 10px #ffde0080,
+        0 0 0 20px #ffde0040;
+        animation:sunrise 4s infinite linear forwards, rays 4s 4s infinite;
+    animation:sunset 30s linear forwards;
+}
+
+@keyframes sunrise{
+    0%{
+        box-shadow:none;
+    }
+    
+    }
+
+.sunrisesunset{
+    position: relative;
+    width:100%;
+    height:100vh;
+    background-color: #def3f6;
+    overflow:hidden;
+    animation: sky 35s linear forwards;
+}
+
+.sunrisesunset .wave {
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100px;
+    background:url(wave.png);
+    background-size: 1000px 100px;
+
+}
+
+.sunrisesunset .wave.wave-1{
+    animation: animate 15s linear infinite;
+    z-index:1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom:0;
+}
+
+.sunrisesunset .wave.wave-2{
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+.sunrisesunset .wave.wave-3{
+    animation: animate3 15s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 20px;
+}
+
+.moon{
+    height:150px;
+    width:150px;
+    border-left:40px solid #fff;
+    border-radius: 100%;
+    transform: rotate(-35deg);
+    margin-top: -170px;
+    animation: moon 30s linear forwards;
+    margin-left:-1100px;
+    animation-delay:8s;
+
+}
+
+@keyframes animate
+{
+    0%{
+        background-position-x: 0;
+    }
+     100%{
+        background-position-x: 900px;
+    }
+}
+
+@keyframes animate2
+{
+    0%{
+        background-position-x: 0;
+    }
+     100%{
+        background-position-x: -1000px;
+    }
+}
+
+@keyframes animate3
+{
+    0%{
+        background-position-x: 0;
+    }
+     100%{
+        background-position-x: -2000px;
+    }
+}
+
+@keyframes sunset{
+    100%{
+        transform: translateY(1200px);
+    }
+    
+}
+
+@keyframes moon{
+    100%{
+        transform: translateX(1800px);
+    }
+    
+}
+
+@keyframes sky{
+    10%{
+        background-color: #def3f6;
+    }
+    50%{
+        background-color: #ffef7a;
+    }
+    60%{
+        background-color: #7d5683;
+    }
+    90%{
+        background-color: #140e36;
+    }
+     100%{
+        background-color: #140e36;
+        delay: 40s;
+    }
+}
